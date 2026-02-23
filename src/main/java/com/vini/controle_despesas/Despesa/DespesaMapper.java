@@ -10,7 +10,6 @@ public class DespesaMapper {
         DespesaModel despesaModel = new DespesaModel();
 
         despesaModel.setId(despesaDTO.getId());
-        despesaModel.setId(despesaDTO.getId());
         despesaModel.setDescricao(despesaDTO.getDescricao());
         despesaModel.setValor(despesaDTO.getValor());
         despesaModel.setTipo(despesaDTO.getTipo());
@@ -35,7 +34,4 @@ public class DespesaMapper {
 
         return despesaDTO;
     }
-
-
-
 }
