@@ -1,4 +1,4 @@
-package com.vini.controle_despesas.Despesa;
+package com.vini.controle_despesas.domain.despesa.enums;
 
 public enum DespesaPrioridade {
 

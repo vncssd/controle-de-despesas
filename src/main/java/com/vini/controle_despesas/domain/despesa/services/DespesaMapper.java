@@ -1,5 +1,6 @@
-package com.vini.controle_despesas.Despesa;
+package com.vini.controle_despesas.domain.despesa.services;
 
+import com.vini.controle_despesas.domain.despesa.model.DespesaModel;
 import org.springframework.stereotype.Component;
 
 @Component

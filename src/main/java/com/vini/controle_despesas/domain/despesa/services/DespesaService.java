@@ -1,5 +1,7 @@
-package com.vini.controle_despesas.Despesa;
+package com.vini.controle_despesas.domain.despesa.services;
 
+import com.vini.controle_despesas.infrastructure.repository.DespesaRepository;
+import com.vini.controle_despesas.domain.despesa.model.DespesaModel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

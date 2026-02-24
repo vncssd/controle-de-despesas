@@ -1,5 +1,8 @@
-package com.vini.controle_despesas.Despesa;
+package com.vini.controle_despesas.domain.despesa.services;
 
+import com.vini.controle_despesas.domain.despesa.enums.DespesaPrioridade;
+import com.vini.controle_despesas.domain.despesa.enums.DespesaStatus;
+import com.vini.controle_despesas.domain.despesa.enums.DespesaTipo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
