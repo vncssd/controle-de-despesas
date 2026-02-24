@@ -1,4 +1,4 @@
-package com.vini.controle_despesas.domain.despesa.services;
+package com.vini.controle_despesas.application.despesa;
 
 import com.vini.controle_despesas.domain.despesa.enums.DespesaPrioridade;
 import com.vini.controle_despesas.domain.despesa.enums.DespesaStatus;
