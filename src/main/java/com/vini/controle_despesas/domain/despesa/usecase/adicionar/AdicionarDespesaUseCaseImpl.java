@@ -7,6 +7,8 @@ import com.vini.controle_despesas.infrastructure.despesa.DespesaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 public class AdicionarDespesaUseCaseImpl implements AdicionarDespesaUseCase {
 
