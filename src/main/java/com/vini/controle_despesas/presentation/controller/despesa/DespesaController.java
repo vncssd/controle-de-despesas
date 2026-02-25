@@ -1,9 +1,10 @@
-package com.vini.controle_despesas.presentation.despesa;
+package com.vini.controle_despesas.presentation.controller.despesa;
 
 
 import com.vini.controle_despesas.application.despesa.DespesaDTO;
 import com.vini.controle_despesas.domain.despesa.usecase.adicionar.AdicionarDespesaUseCase;
 import com.vini.controle_despesas.domain.despesa.usecase.apagar.ApagarDespesaUseCase;
+import com.vini.controle_despesas.domain.despesa.usecase.atualizar.AtualizarDespesaUseCase;
 import com.vini.controle_despesas.domain.despesa.usecase.listar.ListarDespesasUseCase;
 import com.vini.controle_despesas.domain.despesa.usecase.listarPorId.ListarDespesaPorIdUseCase;
 import org.springframework.http.HttpStatus;
@@ -17,14 +18,16 @@ import java.util.List;
 public class DespesaController {
 
     private final ListarDespesaPorIdUseCase listarDespesaPorIdUseCase;
+    private final AtualizarDespesaUseCase atualizarDespesaUseCase;
     private AdicionarDespesaUseCase adicionarDespesaUseCase;
     private ListarDespesasUseCase listarDespesasUseCase;
     private ApagarDespesaUseCase apagarDespesaUseCase;
 
-    public DespesaController(AdicionarDespesaUseCase adicionarDespesaUseCase, ListarDespesasUseCase listarDespesasUseCase, ListarDespesaPorIdUseCase listarDespesaPorIdUseCase) {
+    public DespesaController(AdicionarDespesaUseCase adicionarDespesaUseCase, ListarDespesasUseCase listarDespesasUseCase, ListarDespesaPorIdUseCase listarDespesaPorIdUseCase, AtualizarDespesaUseCase atualizarDespesaUseCase) {
         this.adicionarDespesaUseCase = adicionarDespesaUseCase;
         this.listarDespesasUseCase = listarDespesasUseCase;
         this.listarDespesaPorIdUseCase = listarDespesaPorIdUseCase;
+        this.atualizarDespesaUseCase = atualizarDespesaUseCase;
     }
 
     @PostMapping("/adicionar")
@@ -55,4 +58,14 @@ public class DespesaController {
         }
     }
 
+    @PatchMapping("/atualizar/{id}")
+    public ResponseEntity<String> atualizar (@PathVariable Long id, @RequestBody DespesaDTO despesaDTO){
+        atualizarDespesaUseCase.execute(id, despesaDTO);
+        if (atualizarDespesaUseCase != null){
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("despesa com id "+id+ " atualizada!");
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("despesa com id "+id+ " atualizada!");
+    }
 }
