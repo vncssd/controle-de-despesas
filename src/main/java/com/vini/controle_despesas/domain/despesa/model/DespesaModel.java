@@ -39,7 +39,7 @@ public class DespesaModel {
     private DespesaStatus status;
 
     @Nullable
-    @Column(name = "dataVencimento")
+    @Column(name = "data_vencimento")
     private LocalDate dataVencimento;
 
     @Nullable
