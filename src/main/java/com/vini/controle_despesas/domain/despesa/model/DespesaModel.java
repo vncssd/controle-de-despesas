@@ -4,6 +4,7 @@ import com.vini.controle_despesas.domain.despesa.enums.DespesaPrioridade;
 import com.vini.controle_despesas.domain.despesa.enums.DespesaStatus;
 import com.vini.controle_despesas.domain.despesa.enums.DespesaTipo;
 import com.vini.controle_despesas.domain.parcelamento.model.ParcelamentoModel;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,7 @@ public class DespesaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String descricao;
 
     @Column (name="valor_total")
@@ -39,7 +41,5 @@ public class DespesaModel {
     @Nullable
     @Column(name = "dataVencimento")
     private LocalDate dataVencimento;
-
-    private ParcelamentoModel parcelamento;
 
 }
