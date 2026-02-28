@@ -10,6 +10,9 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name="tb_parcelamento")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class ParcelamentoModel {
 
     @Id
