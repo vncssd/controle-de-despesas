@@ -7,6 +7,7 @@ import com.vini.controle_despesas.domain.parcelamento.model.ParcelamentoModel;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -23,7 +24,7 @@ public class DespesaModel {
 
     private String descricao;
 
-    private int valor;
+    private BigDecimal valor;
 
     @Column(name = "tipo")
     private DespesaTipo tipo;
