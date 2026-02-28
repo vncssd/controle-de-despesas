@@ -1,9 +1,13 @@
 package com.vini.controle_despesas.domain.parcelamento.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vini.controle_despesas.domain.despesa.model.DespesaModel;
 import com.vini.controle_despesas.domain.parcelamento.enums.ParcelamentoJurosTipo;
 import com.vini.controle_despesas.domain.parcelamento.enums.ParcelamentoStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
