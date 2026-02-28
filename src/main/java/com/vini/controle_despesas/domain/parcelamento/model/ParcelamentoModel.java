@@ -28,6 +28,9 @@ public class ParcelamentoModel {
     @Column (name = "valor_parcelado")
     private BigDecimal valorParcelado;
 
+    @Column(name = "quantidade_parcelas")
+    private Integer quantidadeParcelas;
+
     @Column (name = "parcelas_pagas")
     private Integer parcelasPagas;
 
