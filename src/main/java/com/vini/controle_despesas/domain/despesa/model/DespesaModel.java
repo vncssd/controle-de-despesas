@@ -42,4 +42,9 @@ public class DespesaModel {
     @Column(name = "dataVencimento")
     private LocalDate dataVencimento;
 
+    @Nullable
+    @OneToOne
+    @JoinColumn(name = "parcelamento_id")
+    private ParcelamentoModel parcelamento;
+
 }
