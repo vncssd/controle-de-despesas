@@ -36,6 +36,7 @@ public class DespesaModel {
     @Column(name = "status")
     private DespesaStatus status;
 
+    @Nullable
     @Column(name = "dataVencimento")
     private LocalDate dataVencimento;
 
