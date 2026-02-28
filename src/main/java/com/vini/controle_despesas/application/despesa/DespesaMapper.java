@@ -12,7 +12,7 @@ public class DespesaMapper {
 
         despesaModel.setId(despesaDTO.getId());
         despesaModel.setDescricao(despesaDTO.getDescricao());
-        despesaModel.setValor(despesaDTO.getValor());
+        despesaModel.setValorTotal(despesaDTO.getValorTotal());
         despesaModel.setTipo(despesaDTO.getTipo());
         despesaModel.setPrioridade(despesaDTO.getPrioridade());
         despesaModel.setStatus(despesaDTO.getStatus());
