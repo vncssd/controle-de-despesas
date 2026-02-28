@@ -17,7 +17,7 @@ public class DespesaDTO {
 
     private Long id;
     private String descricao;
-    private int valor;
+    private BigDecimal valorTotal;
     private DespesaTipo tipo;
     private DespesaPrioridade prioridade;
     private DespesaStatus status;
