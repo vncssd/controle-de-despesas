@@ -47,6 +47,9 @@ public class ParcelamentoModel {
     @Column (name = "tipo_juros")
     private ParcelamentoJurosTipo tipoJuros;
 
+    @Column (name = "taxa_juros")
+    private BigDecimal taxaJuros;
+
     @JsonIgnore
     @OneToOne(mappedBy = "parcelamento")
     private DespesaModel despesa;
