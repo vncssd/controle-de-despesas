@@ -16,13 +16,13 @@ public class CalcularJurosService {
         };
     }
 
-    private BigDecimal calcularJurosSimples(BigDecimal valorOriginal, BigDecimal taxaJuros, Integer quantidadeParcelas) {
+    public BigDecimal calcularJurosSimples(BigDecimal valorOriginal, BigDecimal taxaJuros, Integer quantidadeParcelas) {
         BigDecimal taxa = taxaJuros.divide(BigDecimal.valueOf(100), 10, RoundingMode.HALF_UP);
         BigDecimal juros = valorOriginal.multiply(taxa).multiply(BigDecimal.valueOf(quantidadeParcelas));
         return valorOriginal.add(juros).setScale(2, RoundingMode.HALF_UP);
     }
 
-    private BigDecimal calcularJurosCompostos(BigDecimal valorOriginal, BigDecimal taxaJuros, Integer quantidadeParcelas) {
+    public BigDecimal calcularJurosCompostos(BigDecimal valorOriginal, BigDecimal taxaJuros, Integer quantidadeParcelas) {
         BigDecimal taxa = taxaJuros.divide(BigDecimal.valueOf(100), 10, RoundingMode.HALF_UP);
         BigDecimal fator = BigDecimal.ONE.add(taxa).pow(quantidadeParcelas);
         return valorOriginal.multiply(fator).setScale(2, RoundingMode.HALF_UP);
