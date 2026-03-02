@@ -1,5 +1,6 @@
 package com.vini.controle_despesas.application.parcelamento;
 
+import com.vini.controle_despesas.domain.despesa.model.DespesaModel;
 import com.vini.controle_despesas.domain.parcelamento.enums.ParcelamentoJurosTipo;
 import com.vini.controle_despesas.domain.parcelamento.enums.ParcelamentoStatus;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class ParcelamentoDTO {
     private Integer parcelasPagas;
     private LocalDate dataInicio;
     private ParcelamentoJurosTipo tipoJuros;
-
+    private BigDecimal taxaJuros;
+    private DespesaModel despesa;
 
 }
