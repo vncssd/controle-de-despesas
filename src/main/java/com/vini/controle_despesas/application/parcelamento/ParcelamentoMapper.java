@@ -19,6 +19,8 @@ public class ParcelamentoMapper {
         parcelamentoModel.setParcelasPagas(parcelamentoDTO.getParcelasPagas());
         parcelamentoModel.setDataInicio(parcelamentoDTO.getDataInicio());
         parcelamentoModel.setTipoJuros(parcelamentoDTO.getTipoJuros());
+        parcelamentoModel.setTaxaJuros(parcelamentoDTO.getTaxaJuros());
+        parcelamentoModel.setDespesa(parcelamentoDTO.getDespesa());
 
         return parcelamentoModel;
 
@@ -37,6 +39,8 @@ public class ParcelamentoMapper {
         parcelamentoDTO.setParcelasPagas(parcelamentoModel.getParcelasPagas());
         parcelamentoDTO.setDataInicio(parcelamentoModel.getDataInicio());
         parcelamentoDTO.setTipoJuros(parcelamentoModel.getTipoJuros());
+        parcelamentoDTO.setTaxaJuros(parcelamentoModel.getTaxaJuros());
+        parcelamentoDTO.setDespesa(parcelamentoModel.getDespesa());
 
         return parcelamentoDTO;
 
