@@ -29,6 +29,7 @@ public class DespesaModel {
     @Column (name="valor_original")
     private BigDecimal valorOriginal;
 
+    @Nullable
     @Column (name="valor_total")
     private BigDecimal valorTotal;
 
