@@ -24,6 +24,13 @@ public class AdicionarDespesaUseCaseImpl implements AdicionarDespesaUseCase {
     @Transactional
     public DespesaDTO execute(DespesaDTO despesaDTO){
         DespesaModel despesaModel = despesaMapper.map(despesaDTO);
+        if (despesaDTO.getTipo().equals(DespesaTipo.PARCELADA)){
+            despesaModel.setValorTotal(calcularValorTotalService.calcularValorTotal(despesaDTO.getParcelamento().getTipoJuros(),
+                                                                                    despesaDTO.getValorOriginal(),
+                                                                                    despesaDTO.getParcelamento().getTaxaJuros(),
+                                                                                    despesaDTO.getParcelamento().getQuantidadeParcelas()));
+            return despesaMapper.map(despesaRepository.save(despesaModel));
+        }
         return despesaMapper.map(despesaRepository.save(despesaModel));
     }
 
