@@ -26,6 +26,9 @@ public class DespesaModel {
     @Column
     private String descricao;
 
+    @Column (name="valor_original")
+    private BigDecimal valorOriginal;
+
     @Column (name="valor_total")
     private BigDecimal valorTotal;
 
