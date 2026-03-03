@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AdicionarParcelamentoUseCaseImpl implements AdicionarParcelamentoUseCase {
 
-    private ParcelamentoMapper parcelamentoMapper;
-    private ParcelamentoRepository parcelamentoRepository;
+    private final ParcelamentoMapper parcelamentoMapper;
+    private final ParcelamentoRepository parcelamentoRepository;
 
     public AdicionarParcelamentoUseCaseImpl(ParcelamentoMapper parcelamentoMapper, ParcelamentoRepository parcelamentoRepository) {
         this.parcelamentoMapper = parcelamentoMapper;

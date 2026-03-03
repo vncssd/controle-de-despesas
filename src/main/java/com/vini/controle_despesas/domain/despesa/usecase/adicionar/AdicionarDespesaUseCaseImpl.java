@@ -12,9 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AdicionarDespesaUseCaseImpl implements AdicionarDespesaUseCase {
 
-    private DespesaMapper despesaMapper;
-    private DespesaRepository despesaRepository;
-    private CalcularValorTotalService calcularValorTotalService;
+    private final DespesaMapper despesaMapper;
+    private final DespesaRepository despesaRepository;
+    private final CalcularValorTotalService calcularValorTotalService;
 
     public AdicionarDespesaUseCaseImpl(DespesaMapper despesaMapper, DespesaRepository despesaRepository, CalcularValorTotalService calcularValorTotalService) {
         this.despesaMapper = despesaMapper;

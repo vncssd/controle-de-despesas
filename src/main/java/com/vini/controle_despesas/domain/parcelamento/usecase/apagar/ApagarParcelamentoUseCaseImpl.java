@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public class ApagarParcelamentoUseCaseImpl implements ApagarParcelamentoUseCase{
 
-    private ParcelamentoRepository parcelamentoRepository;
+    private final ParcelamentoRepository parcelamentoRepository;
 
     public ApagarParcelamentoUseCaseImpl(ParcelamentoRepository parcelamentoRepository) {
         this.parcelamentoRepository = parcelamentoRepository;

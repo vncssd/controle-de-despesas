@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ListarDespesaPorIdUseCaseImpl implements ListarDespesaPorIdUseCase{
 
     private final DespesaMapper despesaMapper;
-    private DespesaRepository despesaRepository;
+    private final DespesaRepository despesaRepository;
 
     public ListarDespesaPorIdUseCaseImpl(DespesaRepository despesaRepository, DespesaMapper despesaMapper) {
         this.despesaRepository = despesaRepository;

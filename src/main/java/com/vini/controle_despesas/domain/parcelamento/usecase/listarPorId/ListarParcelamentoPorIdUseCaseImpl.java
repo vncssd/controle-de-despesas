@@ -11,8 +11,8 @@ import java.util.Optional;
 @Service
 public class ListarParcelamentoPorIdUseCaseImpl implements ListarParcelamentoPorIdUseCase {
 
-    private ParcelamentoRepository parcelamentoRepository;
-    private ParcelamentoMapper parcelamentoMapper;
+    private final ParcelamentoRepository parcelamentoRepository;
+    private final ParcelamentoMapper parcelamentoMapper;
 
     public ListarParcelamentoPorIdUseCaseImpl(ParcelamentoRepository parcelamentoRepository, ParcelamentoMapper parcelamentoMapper) {
         this.parcelamentoRepository = parcelamentoRepository;

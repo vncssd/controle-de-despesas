@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AssociarParcelamentoDespesaUseCaseImpl implements AssociarParcelemantoDespesaUseCase{
 
-    private DespesaRepository despesaRepository;
-    private ParcelamentoRepository parcelamentoRepository;
-    private DespesaMapper despesaMapper;
+    private final DespesaRepository despesaRepository;
+    private final ParcelamentoRepository parcelamentoRepository;
+    private final DespesaMapper despesaMapper;
 
     public AssociarParcelamentoDespesaUseCaseImpl(DespesaRepository despesaRepository, ParcelamentoRepository parcelamentoRepository, DespesaMapper despesaMapper) {
         this.despesaRepository = despesaRepository;

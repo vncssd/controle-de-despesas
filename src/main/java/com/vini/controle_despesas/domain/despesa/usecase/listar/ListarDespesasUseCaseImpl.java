@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 @Service
 public class ListarDespesasUseCaseImpl implements ListarDespesasUseCase {
 
-    private DespesaRepository despesaRepository;
-    private DespesaMapper despesaMapper;
+    private final DespesaRepository despesaRepository;
+    private final DespesaMapper despesaMapper;
 
     public ListarDespesasUseCaseImpl(DespesaRepository despesaRepository, DespesaMapper despesaMapper) {
         this.despesaRepository = despesaRepository;
