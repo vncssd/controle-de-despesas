@@ -15,6 +15,11 @@ public class AtualizarDespesaUseCaseImpl implements AtualizarDespesaUseCase{
     private DespesaRepository despesaRepository;
     private DespesaMapper despesaMapper;
 
+    public AtualizarDespesaUseCaseImpl(DespesaRepository despesaRepository, DespesaMapper despesaMapper) {
+        this.despesaRepository = despesaRepository;
+        this.despesaMapper = despesaMapper;
+    }
+
     @Override
     @Transactional
     public DespesaDTO execute(Long id, DespesaDTO despesaDTO){
