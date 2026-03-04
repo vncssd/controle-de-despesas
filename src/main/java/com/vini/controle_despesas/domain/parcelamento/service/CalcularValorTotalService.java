@@ -10,6 +10,10 @@ public class CalcularValorTotalService {
 
     private CalcularJurosService calcularJurosService;
 
+    public CalcularValorTotalService(CalcularJurosService calcularJurosService) {
+        this.calcularJurosService = calcularJurosService;
+    }
+
     public BigDecimal calcularValorTotal(ParcelamentoJurosTipo tipoJuros, BigDecimal valorOriginal, BigDecimal taxaDeJuros, Integer quantidadeParcelas){
         return switch(tipoJuros){
             case SIMPLES -> calcularJurosService.calcularJurosSimples(valorOriginal, taxaDeJuros, quantidadeParcelas);
