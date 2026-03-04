@@ -12,11 +12,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/despesa")
-public class ListarController {
+public class ListarDespesaController {
 
     private ListarDespesasUseCase listarDespesasUseCase;
 
-    public ListarController(ListarDespesasUseCase listarDespesasUseCase) {
+    public ListarDespesaController(ListarDespesasUseCase listarDespesasUseCase) {
         this.listarDespesasUseCase = listarDespesasUseCase;
     }
 

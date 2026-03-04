@@ -12,11 +12,13 @@ public class DespesaMapper {
 
         despesaModel.setId(despesaDTO.getId());
         despesaModel.setDescricao(despesaDTO.getDescricao());
-        despesaModel.setValor(despesaDTO.getValor());
+        despesaModel.setValorOriginal(despesaDTO.getValorOriginal());
+        despesaModel.setValorTotal(despesaDTO.getValorTotal());
         despesaModel.setTipo(despesaDTO.getTipo());
         despesaModel.setPrioridade(despesaDTO.getPrioridade());
         despesaModel.setStatus(despesaDTO.getStatus());
         despesaModel.setDataVencimento(despesaDTO.getDataVencimento());
+        despesaModel.setParcelamento(despesaDTO.getParcelamento());
 
         return despesaModel;
     }
@@ -27,11 +29,13 @@ public class DespesaMapper {
 
         despesaDTO.setId(despesaModel.getId());
         despesaDTO.setDescricao(despesaModel.getDescricao());
-        despesaDTO.setValor(despesaModel.getValor());
+        despesaDTO.setValorOriginal(despesaModel.getValorOriginal());
+        despesaDTO.setValorTotal(despesaModel.getValorTotal());
         despesaDTO.setTipo(despesaModel.getTipo());
         despesaDTO.setPrioridade(despesaModel.getPrioridade());
         despesaDTO.setStatus(despesaModel.getStatus());
         despesaDTO.setDataVencimento(despesaModel.getDataVencimento());
+        despesaDTO.setParcelamento(despesaModel.getParcelamento());
 
         return despesaDTO;
     }

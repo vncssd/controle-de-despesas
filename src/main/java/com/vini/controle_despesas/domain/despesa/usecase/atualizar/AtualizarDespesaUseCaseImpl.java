@@ -12,8 +12,13 @@ import java.util.Optional;
 @Service
 public class AtualizarDespesaUseCaseImpl implements AtualizarDespesaUseCase{
 
-    private DespesaRepository despesaRepository;
-    private DespesaMapper despesaMapper;
+    private final DespesaRepository despesaRepository;
+    private final DespesaMapper despesaMapper;
+
+    public AtualizarDespesaUseCaseImpl(DespesaRepository despesaRepository, DespesaMapper despesaMapper) {
+        this.despesaRepository = despesaRepository;
+        this.despesaMapper = despesaMapper;
+    }
 
     @Override
     @Transactional

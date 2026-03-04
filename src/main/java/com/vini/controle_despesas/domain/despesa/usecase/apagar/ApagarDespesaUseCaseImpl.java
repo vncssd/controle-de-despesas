@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public class ApagarDespesaUseCaseImpl implements ApagarDespesaUseCase{
 
-    private DespesaRepository despesaRepository;
+    private final DespesaRepository despesaRepository;
 
     public ApagarDespesaUseCaseImpl(DespesaRepository despesaRepository) {
         this.despesaRepository = despesaRepository;

@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/despesa")
-public class ListarPorIdController {
+public class ListarDespesaPorIdController {
 
     private ListarDespesaPorIdUseCase listarDespesaPorIdUseCase;
 
-    public ListarPorIdController(ListarDespesaPorIdUseCase listarDespesaPorIdUseCase) {
+    public ListarDespesaPorIdController(ListarDespesaPorIdUseCase listarDespesaPorIdUseCase) {
         this.listarDespesaPorIdUseCase = listarDespesaPorIdUseCase;
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/listar/id/{id}")
     public ResponseEntity<?> listarPorId (@PathVariable Long id){
         DespesaDTO despesaListada = listarDespesaPorIdUseCase.execute(id);
         if (despesaListada == null){

@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/despesa")
-public class ApagarController {
+public class ApagarDespesaController {
 
     private ApagarDespesaUseCase apagarDespesaUseCase;
     private  ListarDespesaPorIdUseCase listarDespesaPorIdUseCase;
 
-    public ApagarController(ApagarDespesaUseCase apagarDespesaUseCase) {
+    public ApagarDespesaController(ApagarDespesaUseCase apagarDespesaUseCase) {
         this.apagarDespesaUseCase = apagarDespesaUseCase;
     }
 

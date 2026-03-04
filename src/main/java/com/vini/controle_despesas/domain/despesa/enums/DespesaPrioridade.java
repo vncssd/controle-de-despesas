@@ -4,5 +4,5 @@ public enum DespesaPrioridade {
 
     ALTA,
     MEDIA,
-    BAIXA;
+    BAIXA
 }
