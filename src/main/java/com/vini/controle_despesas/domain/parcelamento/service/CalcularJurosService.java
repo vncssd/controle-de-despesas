@@ -9,13 +9,6 @@ import java.math.RoundingMode;
 @Service
 public class CalcularJurosService {
 
-    public BigDecimal calcularValorTotal(ParcelamentoJurosTipo tipoJuros, BigDecimal valorOriginal, BigDecimal taxaDeJuros,Integer quantidadeParcelas){
-        return switch(tipoJuros){
-            case SIMPLES -> calcularJurosSimples(valorOriginal, taxaDeJuros, quantidadeParcelas);
-            case COMPOSTO -> calcularJurosCompostos(valorOriginal, taxaDeJuros, quantidadeParcelas);
-        };
-    }
-
     public BigDecimal calcularJurosSimples(BigDecimal valorOriginal, BigDecimal taxaJuros, Integer quantidadeParcelas) {
         BigDecimal taxa = taxaJuros.divide(BigDecimal.valueOf(100), 10, RoundingMode.HALF_UP);
         BigDecimal juros = valorOriginal.multiply(taxa).multiply(BigDecimal.valueOf(quantidadeParcelas));
