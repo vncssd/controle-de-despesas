@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/despesa")
-public class ListarPorIdController {
+public class ListarDespesaPorIdController {
 
     private ListarDespesaPorIdUseCase listarDespesaPorIdUseCase;
 
-    public ListarPorIdController(ListarDespesaPorIdUseCase listarDespesaPorIdUseCase) {
+    public ListarDespesaPorIdController(ListarDespesaPorIdUseCase listarDespesaPorIdUseCase) {
         this.listarDespesaPorIdUseCase = listarDespesaPorIdUseCase;
     }
 
