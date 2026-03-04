@@ -11,8 +11,8 @@ API REST para gerenciamento de despesas pessoais desenvolvida com Java e Spring 
 - **Spring Boot 4.x**
 - **Spring Data JPA / Hibernate**
 - **PostgreSQL**
-- **Flyway** — versionamento de schema
-- **Lombok** — redução de boilerplate
+- **Flyway**
+- **Lombok** 
 
 ---
 
@@ -36,7 +36,7 @@ src/
             │   ├── model/
             │   ├── enums/
             │   ├── repository/
-            │   ├── service/       # JurosCalculatorService
+            │   ├── service/       # Services de Cálculo de Juros, Valor Total e Valor de Parcela
             │   └── usecase/
             └── ...
 ```
@@ -48,7 +48,7 @@ src/
 | Módulo | Status |
 |---|---|
 | Despesas | ✅ Concluído |
-| Parcelamento e Juros | 🚧 Em andamento |
+| Parcelamento e Juros | ✅ Concluído |
 | Categorias | 🚧 Em andamento |
 | Plano de Gastos por Período | 🚧 Em andamento |
 | Estimativas de Gastos | 🚧 Em andamento |
@@ -102,6 +102,8 @@ As tabelas serão criadas automaticamente pelo Flyway na primeira execução.
 |---|---|---|
 | `POST` | `/despesa/adicionar` | Adiciona uma nova despesa |
 | `GET` | `/despesa/listar` | Lista todas as despesas |
+| `GET` | `/despesa/listar/id/{id}` | Busca uma despesa por id |
+| `GET` | `/despesa/listar/tipo/{tipo}` | Lista despesas por tipo(A VISTA ou PARCELADA) |
 | `PATCH` | `/despesa/atualizar/{id}` | Atualiza campos de uma despesa |
 | `DELETE` | `/despesa/apagar/{id}` | Remove uma despesa |
 
@@ -113,7 +115,7 @@ As tabelas serão criadas automaticamente pelo Flyway na primeira execução.
 - [x] CRUD de despesas
 - [x] Integração com PostgreSQL
 - [x] Cálculo de juros simples e compostos em parcelamentos
-- [ ] Gestão de categorias e prioridades
+- [x] Gestão de categorias e prioridades
 - [ ] Planos de gastos por semana, feriado e período customizado
 - [ ] Estimativas baseadas em histórico por categoria
 - [ ] Planos de investimento personalizados
