@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/despesa")
-public class AtualizarController {
+public class AtualizarDespesaController {
 
     private  AtualizarDespesaUseCase atualizarDespesaUseCase;
 
-    public AtualizarController(AtualizarDespesaUseCase atualizarDespesaUseCase) {
+    public AtualizarDespesaController(AtualizarDespesaUseCase atualizarDespesaUseCase) {
         this.atualizarDespesaUseCase = atualizarDespesaUseCase;
     }
 
