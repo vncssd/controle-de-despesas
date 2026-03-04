@@ -1,6 +1,5 @@
 package com.vini.controle_despesas.presentation.controller.parcelamento;
 
-import com.vini.controle_despesas.application.despesa.DespesaDTO;
 import com.vini.controle_despesas.application.parcelamento.ParcelamentoDTO;
 import com.vini.controle_despesas.domain.parcelamento.usecase.adicionar.AdicionarParcelamentoUseCase;
 import org.springframework.http.HttpStatus;
@@ -12,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/parcelamento")
 @RestController
-public class AdicionarController {
+public class AdicionarParcelamentoController {
 
     private AdicionarParcelamentoUseCase adicionarParcelamentoUseCase;
 
-    public AdicionarController(AdicionarParcelamentoUseCase adicionarParcelamentoUseCase) {
+    public AdicionarParcelamentoController(AdicionarParcelamentoUseCase adicionarParcelamentoUseCase) {
         this.adicionarParcelamentoUseCase = adicionarParcelamentoUseCase;
     }
 
