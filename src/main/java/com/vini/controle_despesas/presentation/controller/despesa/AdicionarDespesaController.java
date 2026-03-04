@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/despesa")
 @RestController
-public class AdicionarController {
+public class AdicionarDespesaController {
 
     private AdicionarDespesaUseCase adicionarDespesaUseCase;
 
-    public AdicionarController(AdicionarDespesaUseCase adicionarDespesaUseCase) {
+    public AdicionarDespesaController(AdicionarDespesaUseCase adicionarDespesaUseCase) {
         this.adicionarDespesaUseCase = adicionarDespesaUseCase;
     }
 
