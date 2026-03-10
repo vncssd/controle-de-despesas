@@ -1,5 +1,5 @@
 # Controle de Despesas — API
-API REST para gerenciamento de despesas pessoais desenvolvida com Java e Spring Boot, seguindo os princípios de Domain Driven Design. O sistema oferece controle de gastos fixos e variáveis, cálculo de parcelamentos com juros, planos de gastos por período e planejamento de investimentos.
+API REST para gerenciamento de despesas pessoais desenvolvida com Java e Spring Boot.
 ---
 ## 🚀 Tecnologias
 - **Java 21**
