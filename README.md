@@ -1,6 +1,4 @@
-
 # Controle de Despesas — API
-
 API REST para gerenciamento de despesas pessoais desenvolvida com Java e Spring Boot, seguindo os princípios de Domain Driven Design. O sistema oferece controle de gastos fixos e variáveis, cálculo de parcelamentos com juros, planos de gastos por período e planejamento de investimentos.
 
 ---
@@ -12,7 +10,8 @@ API REST para gerenciamento de despesas pessoais desenvolvida com Java e Spring 
 - **Spring Data JPA / Hibernate**
 - **PostgreSQL**
 - **Flyway**
-- **Lombok** 
+- **Lombok**
+- **Docker**
 
 ---
 
@@ -59,40 +58,60 @@ src/
 ## ▶️ Como Executar
 
 ### Pré-requisitos
+
 - Java 21+
 - Maven
-- PostgreSQL instalado e rodando localmente
+- Docker e Docker Compose
 
 ### 1. Clone o repositório
+
 ```bash
 git clone https://github.com/seu-usuario/controle-despesas.git
 cd controle-despesas
 ```
 
-### 2. Crie o banco de dados
-Com o PostgreSQL rodando, crie o banco pelo terminal ou pelo seu cliente de preferência (DBeaver, pgAdmin etc.):
-```sql
-CREATE DATABASE controle_despesas;
+### 2. Configure as variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto com base no `.env.example`:
+
+```env
+DB_URL=url_do_banco
+DB_NAME=controle-despesas
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
 ```
 
-### 3. Configure o application.properties
+### 3. Suba o banco de dados com Docker
+
+```bash
+docker compose up -d
+```
+
+O container irá criar o banco `controle-despesas` automaticamente com as credenciais definidas no `.env`. Para verificar se subiu corretamente:
+
+```bash
+docker ps
+```
+
+### 4. Configure o application.properties
+
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/controle_despesas
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.datasource.url=jdbc:postgresql://localhost:5432/controle-despesas
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
 spring.datasource.driver-class-name=org.postgresql.Driver
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.hibernate.ddl-auto=validate
 ```
 
-### 4. Execute a aplicação
+### 5. Execute a aplicação
+
 ```bash
 ./mvnw spring-boot:run
 ```
 
 A API estará disponível em `http://localhost:8080`.
 As tabelas serão criadas automaticamente pelo Flyway na primeira execução.
-
 
 ---
 
@@ -103,12 +122,11 @@ As tabelas serão criadas automaticamente pelo Flyway na primeira execução.
 | `POST` | `/despesa/adicionar` | Adiciona uma nova despesa |
 | `GET` | `/despesa/listar` | Lista todas as despesas |
 | `GET` | `/despesa/listar/id/{id}` | Busca uma despesa por id |
-| `GET` | `/despesa/listar/tipo/{tipo}` | Lista despesas por tipo(A VISTA ou PARCELADA) |
+| `GET` | `/despesa/listar/tipo/{tipo}` | Lista despesas por tipo (A_VISTA ou PARCELADA) |
 | `PATCH` | `/despesa/atualizar/{id}` | Atualiza campos de uma despesa |
 | `DELETE` | `/despesa/apagar/{id}` | Remove uma despesa |
 
 ---
-
 
 ## 📌 Roadmap
 
@@ -116,6 +134,7 @@ As tabelas serão criadas automaticamente pelo Flyway na primeira execução.
 - [x] Integração com PostgreSQL
 - [x] Cálculo de juros simples e compostos em parcelamentos
 - [x] Gestão de categorias e prioridades
+- [x] Dockerização do banco de dados
 - [ ] Planos de gastos por semana, feriado e período customizado
 - [ ] Estimativas baseadas em histórico por categoria
 - [ ] Planos de investimento personalizados
@@ -125,4 +144,4 @@ As tabelas serão criadas automaticamente pelo Flyway na primeira execução.
 
 ## 👤 Autor
 
-Desenvolvido por **Vinicius Silva - https://www.linkedin.com/in/vncssd/**
+Desenvolvido por **Vinicius Silva — https://www.linkedin.com/in/vncssd/**
