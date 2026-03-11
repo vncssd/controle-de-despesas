@@ -25,6 +25,6 @@ public class ParcelamentoDTO {
     private LocalDate dataInicio;
     private ParcelamentoJurosTipo tipoJuros;
     private BigDecimal taxaJuros;
-    private DespesaModel despesa;
+    private DespesaDTO despesa;
 
 }
