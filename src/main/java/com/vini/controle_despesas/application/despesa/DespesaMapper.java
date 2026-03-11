@@ -18,7 +18,7 @@ public class DespesaMapper {
         despesaModel.setPrioridade(despesaDTO.getPrioridade());
         despesaModel.setStatus(despesaDTO.getStatus());
         despesaModel.setDataVencimento(despesaDTO.getDataVencimento());
-        despesaModel.setParcelamento(despesaDTO.getParcelamento());
+        despesaModel.setParcelamento(despesaModel.getParcelamento());
 
         return despesaModel;
     }
@@ -35,7 +35,7 @@ public class DespesaMapper {
         despesaDTO.setPrioridade(despesaModel.getPrioridade());
         despesaDTO.setStatus(despesaModel.getStatus());
         despesaDTO.setDataVencimento(despesaModel.getDataVencimento());
-        despesaDTO.setParcelamento(despesaModel.getParcelamento());
+        despesaDTO.setParcelamento(despesaDTO.getParcelamento());
 
         return despesaDTO;
     }
