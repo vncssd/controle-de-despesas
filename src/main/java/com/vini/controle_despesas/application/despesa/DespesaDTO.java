@@ -25,6 +25,8 @@ public class DespesaDTO {
     private DespesaPrioridade prioridade;
     private DespesaStatus status;
     private LocalDate dataVencimento;
-    private ParcelamentoModel parcelamento;
+
+    @Schema(description = "Dados do parcelamento, obrigatório quando tipo for PARCELADA")
+    private ParcelamentoDTO parcelamento;
 
 }
