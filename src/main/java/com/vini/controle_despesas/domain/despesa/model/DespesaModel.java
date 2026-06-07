@@ -26,6 +26,11 @@ public class DespesaModel {
         this.dataAtualizacao = LocalDateTime.now();
     }
 
+    @PreUpdate
+    public void preUpdate(){
+        this.dataAtualizacao = LocalDateTime.now();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
