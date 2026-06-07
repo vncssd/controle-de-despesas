@@ -64,13 +64,14 @@ public class AdicionarDespesaUseCaseImpl implements AdicionarDespesaUseCase {
             parcelamentoModel.setParcelamentoStatus(ParcelamentoStatus.EM_ANDAMENTO);
             parcelamentoModel.setValorOriginal(despesaDTO.getValorOriginal());
             parcelamentoModel.setValorParcela(calcularValorParcelaService.calcularValorParcela(valorTotal, despesaDTO.getParcelamento().getQuantidadeParcelas()));
+            parcelamentoModel.setValorParcelado(calcularValorTotalService.calcularValorTotal(despesaDTO.getParcelamento().getTipoJuros(), despesaDTO.getValorOriginal(), despesaDTO.getParcelamento().getTaxaJuros(), despesaDTO.getParcelamento().getQuantidadeParcelas()));
             parcelamentoModel.setQuantidadeParcelas(despesaDTO.getParcelamento().getQuantidadeParcelas());
             parcelamentoModel.setParcelasPagas(0);
             parcelamentoModel.setDataInicio(LocalDate.now());
             parcelamentoModel.setTipoJuros(despesaDTO.getParcelamento().getTipoJuros());
             parcelamentoModel.setTaxaJuros(despesaDTO.getParcelamento().getTaxaJuros());
 
-            parcelamentoMapper.map(parcelamentoRepository.save(parcelamentoModel));
+            parcelamentoMapper.mapToDTO(parcelamentoRepository.save(parcelamentoModel));
             despesaModel.setParcelamento(parcelamentoModel);
 
         }
