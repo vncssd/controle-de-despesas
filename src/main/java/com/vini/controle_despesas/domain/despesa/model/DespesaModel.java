@@ -10,6 +10,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tb_despesa")
@@ -18,6 +19,12 @@ import java.time.LocalDate;
 @Data
 
 public class DespesaModel {
+
+    @PrePersist
+    public void prePersist(){
+        this.dataCriacao = LocalDateTime.now();
+        this.dataAtualizacao = LocalDateTime.now();
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,6 +52,12 @@ public class DespesaModel {
     @Nullable
     @Column(name = "data_vencimento")
     private LocalDate dataVencimento;
+
+    @Column(name = "data_criacao", updatable = false)
+    private LocalDateTime dataCriacao;
+
+    @Column(name = "data_atualizacao")
+    private LocalDateTime dataAtualizacao;
 
     @Nullable
     @OneToOne
