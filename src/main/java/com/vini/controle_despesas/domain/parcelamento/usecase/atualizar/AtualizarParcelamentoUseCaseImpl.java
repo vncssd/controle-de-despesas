@@ -27,10 +27,10 @@ public class AtualizarParcelamentoUseCaseImpl implements AtualizarParcelamentoUs
         if (parcelamentoModelOptional.isEmpty()){
             return null;
         }
-        ParcelamentoModel parcelamentoAtualizado = parcelamentoMapper.map(parcelamentoDTO);
+        ParcelamentoModel parcelamentoAtualizado = parcelamentoMapper.mapToModel(parcelamentoDTO);
         parcelamentoAtualizado.setId(id);
         ParcelamentoModel parcelamentoSalvo = parcelamentoRepository.save(parcelamentoAtualizado);
-        return parcelamentoMapper.map(parcelamentoSalvo);
+        return parcelamentoMapper.mapToDTO(parcelamentoSalvo);
     }
 
 

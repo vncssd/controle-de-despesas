@@ -19,7 +19,7 @@ public class ListarDespesaPorIdController {
         this.listarDespesaPorIdUseCase = listarDespesaPorIdUseCase;
     }
 
-    @GetMapping("/listar/id/{id}")
+    @GetMapping("/listar/{id}")
     public ResponseEntity<?> listarPorId (@PathVariable Long id){
         DespesaDTO despesaListada = listarDespesaPorIdUseCase.execute(id);
         if (despesaListada == null){

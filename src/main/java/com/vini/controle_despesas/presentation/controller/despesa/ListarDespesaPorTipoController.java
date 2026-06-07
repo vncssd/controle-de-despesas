@@ -22,7 +22,7 @@ public class ListarDespesaPorTipoController {
         this.listarDespesaPorTipoUseCase = listarDespesaPorTipoUseCase;
     }
 
-    @GetMapping("/listar/tipo/{tipo}")
+    @GetMapping("/listar/{tipo}")
     public ResponseEntity<?> listarPorTipo(@PathVariable DespesaTipo tipo){
         List<DespesaDTO> despesasList = listarDespesaPorTipoUseCase.execute(tipo);
         if (despesasList == null){
