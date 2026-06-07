@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -24,9 +25,9 @@ public class ListarDespesaPorIdMinimoController {
     @GetMapping("/listar/min/{id}")
     public ResponseEntity<?> listarPorIdMinimo (@PathVariable Long id){
         List<DespesaDTO> despesaListada = listarDespesaPorIdMinimoUseCase.execute(id);
-        if (despesaListada == null){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("despesa não encontrada");
+        if (despesaListada == null || despesaListada.isEmpty()){
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(Collections.emptyList());
         }
         return ResponseEntity.status(HttpStatus.OK)
                 .body(despesaListada);
