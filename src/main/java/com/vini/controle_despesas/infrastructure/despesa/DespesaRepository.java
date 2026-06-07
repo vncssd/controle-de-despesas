@@ -11,4 +11,5 @@ public interface DespesaRepository extends JpaRepository<DespesaModel, Long> {
 
     List<DespesaModel> findByTipo(DespesaTipo despesaTipo);
 
+    List<DespesaModel> findByIdGreaterThan(Long id);
 }
