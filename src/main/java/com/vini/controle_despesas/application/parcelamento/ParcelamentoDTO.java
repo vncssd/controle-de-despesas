@@ -1,11 +1,8 @@
 package com.vini.controle_despesas.application.parcelamento;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.vini.controle_despesas.domain.despesa.model.DespesaModel;
 import com.vini.controle_despesas.domain.parcelamento.enums.ParcelamentoJurosTipo;
 import com.vini.controle_despesas.domain.parcelamento.enums.ParcelamentoStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -47,10 +44,5 @@ public class ParcelamentoDTO {
 
     @Schema(description = "Taxa de juros mensal", example = "2.5")
     private BigDecimal taxaJuros;
-
-    @Schema(hidden = true)
-    @JsonIgnore
-    @OneToOne(mappedBy = "parcelamento")
-    private DespesaModel despesa;
 
 }
